@@ -21,7 +21,7 @@ const SOCIAL_LINKS = {
 };
 
 // ⚠️ يا أحمد: ضع رابط سيرتك الذاتية هنا
-const CV_LINK =
+export const CV_LINK =
   "https://drive.google.com/file/d/11CVcay_Fm2X2yyIePjjJDRO3hGAOoQum/view?usp=sharing"; // غيّر هذا لرابط CV الفعلي
 
 const navLinks = ["home", "about", "skills", "projects", "contact"] as const;

@@ -4,9 +4,11 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { GraduationCap, MapPin, Briefcase, CheckCircle2 } from "lucide-react";
+import { GraduationCap, MapPin, Briefcase, CheckCircle2, Download } from "lucide-react";
 import { useLang } from "../context/LanguageContext";
 import { cn } from "../utils/cn";
+import { CV_LINK } from "./Navbar";
+import { SiReaddotcv } from "react-icons/si";
 
 // إحصائيات
 const STATS = [
@@ -49,15 +51,20 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="relative py-24 lg:py-32 bg-slate-950 overflow-hidden">
+    <section
+      id="about"
+      className="relative py-24 lg:py-32 bg-slate-950 overflow-hidden"
+    >
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/3 right-0 w-72 h-72 bg-violet-600/10 rounded-full blur-3xl" />
         <div className="absolute bottom-1/3 left-0 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
-
+      <div
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        ref={ref}
+      >
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -78,7 +85,6 @@ export default function About() {
 
         {/* Main Grid */}
         <div className={cn("grid lg:grid-cols-2 gap-12 lg:gap-16 items-start")}>
-
           {/* Left - Image + Stats */}
           <motion.div
             initial={{ opacity: 0, x: isRTL ? 50 : -50 }}
@@ -88,7 +94,12 @@ export default function About() {
           >
             {/* Profile Card */}
             <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-violet-900/30 to-purple-900/20 border border-violet-500/20 p-8">
-              <div className={cn("flex items-center gap-6", isRTL && "flex-row-reverse")}>
+              <div
+                className={cn(
+                  "flex items-center gap-6",
+                  isRTL && "flex-row-reverse",
+                )}
+              >
                 {/* Avatar */}
                 <div className="relative flex-shrink-0">
                   <div className="w-24 h-24 rounded-2xl overflow-hidden border-2 border-violet-500/40">
@@ -101,7 +112,8 @@ export default function About() {
                         target.style.display = "none";
                         const parent = target.parentElement;
                         if (parent) {
-                          parent.style.background = "linear-gradient(135deg, #7c3aed, #0891b2)";
+                          parent.style.background =
+                            "linear-gradient(135deg, #7c3aed, #0891b2)";
                           parent.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:40px;">👨‍💻</div>`;
                         }
                       }}
@@ -111,8 +123,12 @@ export default function About() {
                 </div>
 
                 <div className={cn(isRTL && "text-right")}>
-                  <h3 className="text-xl font-bold text-white">Ahmed Abdlmawla</h3>
-                  <p className="text-violet-400 text-sm font-medium">{dict.hero.title}</p>
+                  <h3 className="text-xl font-bold text-white">
+                    Ahmed Abdlmawla
+                  </h3>
+                  <p className="text-violet-400 text-sm font-medium">
+                    {dict.hero.title}
+                  </p>
                   <p className="text-gray-400 text-xs mt-1 flex items-center gap-1">
                     <MapPin size={11} />
                     {dict.about.location.value}
@@ -121,14 +137,26 @@ export default function About() {
               </div>
 
               {/* Description */}
-              <p className={cn("mt-6 text-gray-300 text-sm leading-relaxed", isRTL && "text-right")}>
+              <p
+                className={cn(
+                  "mt-6 text-gray-300 text-sm leading-relaxed",
+                  isRTL && "text-right",
+                )}
+              >
                 {dict.about.description}
               </p>
 
               {/* Status Badge */}
-              <div className={cn("mt-4 flex items-center gap-2", isRTL && "flex-row-reverse")}>
+              <div
+                className={cn(
+                  "mt-4 flex items-center gap-2",
+                  isRTL && "flex-row-reverse",
+                )}
+              >
                 <CheckCircle2 size={14} className="text-emerald-400" />
-                <span className="text-emerald-400 text-xs font-semibold">{dict.about.available.value}</span>
+                <span className="text-emerald-400 text-xs font-semibold">
+                  {dict.about.available.value}
+                </span>
               </div>
             </div>
 
@@ -147,7 +175,11 @@ export default function About() {
                     {stat.value}
                   </div>
                   <div className="text-gray-400 text-xs mt-1">
-                    {dict.about.stats[stat.key as keyof typeof dict.about.stats]}
+                    {
+                      dict.about.stats[
+                        stat.key as keyof typeof dict.about.stats
+                      ]
+                    }
                   </div>
                 </motion.div>
               ))}
@@ -172,17 +204,28 @@ export default function About() {
                   className={cn(
                     "flex items-start gap-4 p-5 rounded-2xl bg-gradient-to-br border backdrop-blur-sm hover:scale-[1.02] transition-all duration-300",
                     card.color,
-                    isRTL && "flex-row-reverse text-right"
+                    isRTL && "flex-row-reverse text-right",
                   )}
                 >
-                  <div className={cn("w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0", card.iconColor)}>
+                  <div
+                    className={cn(
+                      "w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0",
+                      card.iconColor,
+                    )}
+                  >
                     <Icon size={20} />
                   </div>
                   <div>
-                    <p className="text-gray-400 text-xs font-medium uppercase tracking-widest mb-1">{card.label}</p>
-                    <p className="text-white font-semibold text-sm">{card.title}</p>
+                    <p className="text-gray-400 text-xs font-medium uppercase tracking-widest mb-1">
+                      {card.label}
+                    </p>
+                    <p className="text-white font-semibold text-sm">
+                      {card.title}
+                    </p>
                     {card.subtitle && (
-                      <p className="text-gray-400 text-xs mt-0.5">{card.subtitle}</p>
+                      <p className="text-gray-400 text-xs mt-0.5">
+                        {card.subtitle}
+                      </p>
                     )}
                   </div>
                 </motion.div>
@@ -196,11 +239,22 @@ export default function About() {
               transition={{ duration: 0.5, delay: 0.9 }}
               className="p-5 rounded-2xl bg-white/5 border border-white/10"
             >
-              <p className={cn("text-gray-400 text-xs font-medium uppercase tracking-widest mb-3", isRTL && "text-right")}>
+              <p
+                className={cn(
+                  "text-gray-400 text-xs font-medium uppercase tracking-widest mb-3",
+                  isRTL && "text-right",
+                )}
+              >
                 {isRTL ? "أبرز التقنيات" : "Core Expertise"}
               </p>
               <div className="flex flex-wrap gap-2">
-                {["React 19", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"].map((tech) => (
+                {[
+                  "React 19",
+                  "Next.js",
+                  "TypeScript",
+                  "Tailwind CSS",
+                  "Framer Motion",
+                ].map((tech) => (
                   <span
                     key={tech}
                     className="px-3 py-1 text-xs font-semibold rounded-lg bg-violet-500/15 border border-violet-500/25 text-violet-300"
@@ -210,6 +264,17 @@ export default function About() {
                 ))}
               </div>
             </motion.div>
+            <motion.a
+              target="_blank"
+              href={CV_LINK}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-1.5 px-4 py-6 justify-center text-xl font-semibold rounded-lg bg-gradient-to-r from-violet-600 to-purple-600 text-white shadow-md shadow-violet-500/25 hover:shadow-violet-500/40 transition-all duration-300"
+            >
+              <Download size={22} />
+              {dict.nav.downloadCV}
+              <SiReaddotcv />
+            </motion.a>
           </motion.div>
         </div>
       </div>
