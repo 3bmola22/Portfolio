@@ -1,0 +1,16 @@
+{
+  "name": "Ahmed Abdlmawla | Front-End Developer",
+  "short_name": "Ahmed.dev",
+  "description": "Junior Front-End Developer & React.js specialist from Cairo, Egypt",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#7c3aed",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ]
+}

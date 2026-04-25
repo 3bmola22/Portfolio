@@ -1,0 +1,9 @@
+# ============================================
+# robots.txt - Ahmed Abdlmawla Portfolio
+# ============================================
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ahmed-abdlmawla.vercel.app/sitemap.xml
