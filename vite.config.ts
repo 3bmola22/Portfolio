@@ -1,19 +1,13 @@
 import path from "path";
 import { fileURLToPath } from "url";
 import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 import { viteSingleFile } from "vite-plugin-singlefile";
 import { defineConfig } from "vite";
 
-// للتعامل مع __dirname في ES Modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    react(), // دعم لـ React
-    viteSingleFile(), // لتجميع كل شيء في ملف واحد (اختياري)
-  ],
+  plugins: [react(), tailwindcss(), viteSingleFile()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
