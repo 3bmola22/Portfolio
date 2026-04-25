@@ -4,7 +4,13 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { GraduationCap, MapPin, Briefcase, CheckCircle2, Download } from "lucide-react";
+import {
+  GraduationCap,
+  MapPin,
+  Briefcase,
+  CheckCircle2,
+  Download,
+} from "lucide-react";
 import { useLang } from "../context/LanguageContext";
 import { cn } from "../utils/cn";
 import { CV_LINK } from "./Navbar";
@@ -12,8 +18,8 @@ import { SiReaddotcv } from "react-icons/si";
 
 // إحصائيات
 const STATS = [
-  { value: "2+", key: "projects", emoji: "🚀" },
-  { value: "10+", key: "skills", emoji: "⚡" },
+  { value: "3+", key: "projects", emoji: "🚀" },
+  { value: "20+", key: "skills", emoji: "⚡" },
   { value: "98+", key: "lighthouse", emoji: "🏆" },
   { value: "∞", key: "coffee", emoji: "☕" },
 ];
@@ -254,6 +260,22 @@ export default function About() {
                   "TypeScript",
                   "Tailwind CSS",
                   "Framer Motion",
+                  "Vite",
+                  "Git",
+                  "GitHub",
+                  "Seo",
+                  "Responsive Design",
+                  ,
+                  "Accessibility",
+                  "Performance Optimization",
+                  "jwt Auth",
+                  "react-query",
+                  ,
+                  "react-hook-form",
+                  "emailjs",
+                  ,
+                  "Hero Ui",
+                  "Axios",
                 ].map((tech) => (
                   <span
                     key={tech}
